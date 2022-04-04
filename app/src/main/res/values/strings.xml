@@ -4,6 +4,9 @@
     <string name="main_password">Введите пароль:</string>
     <string name="main_button">Войти</string>
     <string name="main_activity2_login">Введенный логин</string>
+    <string name="incorrect_login_password">Неккоректные логин и пароль</string>
+    <string name="incorrect_password">Некорректный пароль</string>
+    <string name="incorrect_login">Некорректный логин</string>
 
 
 </resources>

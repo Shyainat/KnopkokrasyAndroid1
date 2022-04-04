@@ -16,6 +16,5 @@ class SecondActivity : AppCompatActivity() {
     }
     companion object{
         const val EDIT_LOGIN ="editlogin"
-        const val EDIT_PASSWORD = "editpassword"
     }
 }
