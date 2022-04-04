@@ -12,22 +12,22 @@ class MainActivity : AppCompatActivity() {
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_main)
         val button1:Button=findViewById(R.id.button_login)
-        button1.setOnClickListener { openMainActivity2() }
+        button1.setOnClickListener { openSecondActivity() }
 
     }
 
-    private fun openMainActivity2() {
+    private fun openSecondActivity() {
         val intent = Intent(this,SecondActivity::class.java)
         val login:EditText = findViewById(R.id.login)
         val password:EditText = findViewById(R.id.password)
         val text1:TextView = findViewById(R.id.incorrect_login)
         intent.putExtra(SecondActivity.EDIT_LOGIN,login.text.toString())
-        intent.putExtra(SecondActivity.EDIT_PASSWORD,password.text.toString())
         when {
                 (password.length() > 7 && login.length() > 2 && password.text.any { it.isDigit() })->startActivity(intent)
-            (login.length() < 3 && (password.length() <8 || !password.text.any { it.isDigit() }))->text1.text ="Неккоректные логин и пароль"
-            (password.length() < 8 || !password.text.any { it.isDigit() })->text1.text ="Некоректный пароль"
-                    else->text1.text ="Некорректный логин"
+            (login.length() < 3 && (password.length() <8 || !password.text.any { it.isDigit() }))->text1.text =getString(
+                            R.string.incorrect_login_password)
+            (password.length() < 8 || !password.text.any { it.isDigit() })->text1.text =getString(R.string.incorrect_password)
+                    else->text1.text =getString(R.string.incorrect_login)
 
         }
 
